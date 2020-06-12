@@ -12,7 +12,8 @@ class VersionLoader {
         this.checkDebugMode();
         if(VersionLoader.DEBUG) this.startDebuggingMode();
 
-        this.returnPageMaker()();
+        this.scLoader = undefined;
+        this.makePage();
     }
     /**
      * Parse queries and make the LoadParameter
@@ -33,22 +34,31 @@ class VersionLoader {
     /**
      * Make the menu page (choosing between the differents versions)
      */
-    makeChooseGame() {
+    HomePage_1() {
+        if (VersionLoader.DEBUG) console.log("  >> Preparing PageMaker");
+        this.scLoader = new ScriptLoader();
+        this.scLoader.addScript("./pages/HomePageMaker.js");
+        this.scLoader.toExecuteAfter(this.HomePage_2);
 
+        this.scLoader.constructScripts();
+    }
+    HomePage_2() {
+        if (VersionLoader.DEBUG) console.log("  >> Making Home Page");
+        let home = new HomePageMaker();
     }
     /**
      * Start loaders for the differents pages
-     * @return {Function}
      */
-    returnPageMaker() {
+    makePage() {
         if (this.loadParameter.keyExist(LoadingParameter.PARAM_PAGE)) { // Si la page est précisée
             switch(this.loadParameter.getValue(LoadingParameter.PARAM_PAGE)) {
                 default:
-                    return this.makeChooseGame;
+                    this.HomePage_1();
+                    break;
             }
         }
         else { // Par défaut on affiche le menu
-            return this.makeChooseGame;
+            this.HomePage_1();
         }
     }
     /*
@@ -70,8 +80,8 @@ class VersionLoader {
         this.checkParamDebug();
     }
     checkParamDebug() {
-        console.log("  >> Printing passed parameters : ");
-        console.log("  -------------------------------");
+        console.log("  >> Page parameters : ");
+        console.log("  --------------------");
         for (let i=0; i<this.loadParameter.key.length;i++) {
             console.log("       - "+this.loadParameter.key[i]+" => "+this.loadParameter.value[i]);
         }
