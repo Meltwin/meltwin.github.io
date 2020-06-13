@@ -37,7 +37,7 @@ class VersionLoader {
     HomePage_1() {
         if (VersionLoader.DEBUG) console.log("  >> Preparing PageMaker");
         this.scLoader = new ScriptLoader();
-        this.scLoader.addScript("./pages/HomePageMaker.js");
+        this.scLoader.addScript("./pages/Home/HomePageMaker.js");
         this.scLoader.toExecuteAfter(this.HomePage_2);
 
         this.scLoader.constructScripts();

@@ -3,6 +3,7 @@ class PageMaker {
     constructor() {
         this.scripts = [];
         this.css = [];
+        this.construct = undefined;
     }
     /**
     * Launch the making of the loading of js files
@@ -13,7 +14,7 @@ class PageMaker {
             for (let i=0; i<this.scripts.length;i++) {
                 scLoader.addScript(this.scripts[i]);
             }
-            scLoader.toExecuteAfter(this.loadCssFiles);
+            scLoader.toExecuteAfter(()=>this.loadCssFiles());
     
             scLoader.constructScripts();
         }
@@ -32,16 +33,15 @@ class PageMaker {
             for (let i=0; i<this.css.length;i++) {
                 cssLoader.addSheet(this.css[i]);
             }
-            cssLoader.toExecuteAfter(this.endOfLoading);
+            cssLoader.toExecuteAfter(()=>this.construct());
     
             cssLoader.constructSheets();
         }
         else {
             if (VersionLoader.DEBUG) console.log("     + No stylesheet need to be loaded");
-            this.endOfLoading()
+            this.construct();
         }
     }
     endOfLoading() {
-
     }
 }

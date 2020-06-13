@@ -47,7 +47,7 @@ class CSSLoader {
             this.waiting.push(true);
             this.makeSheet(this.toConstruct[i]);
         }
-        this.loop();
+        this.toExec();
     }
     /**
     * Create a <script> element and append it in <head>
@@ -59,40 +59,9 @@ class CSSLoader {
 
         // Fonction
         let script = document.createElement("link");
-        script.href = href;
-        script.addEventListener("load",(e)=>this.cssEndLoad(e,src),false);
+        script.href = src;
+        script.rel = "stylesheet";
+        script.type = "text/css"
         document.head.appendChild(script); 
-    }
-    /**
-     * Wait for the script to be loaded
-     * @param {Event} e the loading event
-     * @param {String} src the path of the script
-     */
-    cssEndLoad(e,src) {
-        if (e.eventPhase == 2) {
-            let index = this.getSheetIndex(src);
-            if (index != -1) this.waiting[index] = false;
-        }
-    }
-    /**
-     * Is loading ended ?
-     */
-    isLoadingEnded() {
-        let b = true;
-        for (let i=0;i<this.waiting.length;i++) {
-            b = !this.waiting[i]&&b;
-        }
-        return b;
-    }
-    /**
-     * Loop function while script are loading
-     */
-    loop() {
-        if (this.isLoadingEnded()) {
-            this.toExec();
-        }
-        else {
-            setTimeout(()=>this.loop(),CSSLoader.LOOP_INTERVAL);
-        }
     }
 }

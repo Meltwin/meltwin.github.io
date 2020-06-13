@@ -1,0 +1,22 @@
+.Gui_Win01 {
+    width:100px;
+    height:100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    margin:0px 5px 0px 5px;
+}
+.row>.inner {
+    flex:1;
+
+    background: url("../../assets/gui/plancheSMask.jpg");
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-clip: border-box;
+}
