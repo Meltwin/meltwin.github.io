@@ -31,20 +31,36 @@ class VersionLoader {
             this.loadParameter.addParam(strT[0],strT[1]);
         }
     }
+    /*
+        ####################################
+                      HOME PAGE
+        ####################################
+    */
     /**
      * Make the menu page (choosing between the differents versions)
      */
-    HomePage_1() {
+    HomePage() {
         if (VersionLoader.DEBUG) console.log("  >> Preparing PageMaker");
         this.scLoader = new ScriptLoader();
         this.scLoader.addScript("./pages/Home/HomePageMaker.js");
-        this.scLoader.toExecuteAfter(this.HomePage_2);
+        this.scLoader.toExecuteAfter(()=>{
+            new HomePageMaker();
+        });
 
         this.scLoader.constructScripts();
     }
-    HomePage_2() {
-        if (VersionLoader.DEBUG) console.log("  >> Making Home Page");
-        let home = new HomePageMaker();
+    /*
+        ####################################
+                    CLASSIC PAGE
+        ####################################
+    */
+    ClassicPage() {
+        this.scLoader = new ScriptLoader();
+        this.scLoader.addScript("./pages/ClassicGame/ClassicPageMaker.js");
+        this.scLoader.toExecuteAfter(()=>{
+
+        });
+        this.scLoader.constructScripts();
     }
     /**
      * Start loaders for the differents pages
@@ -52,8 +68,11 @@ class VersionLoader {
     makePage() {
         if (this.loadParameter.keyExist(LoadingParameter.PARAM_PAGE)) { // Si la page est précisée
             switch(this.loadParameter.getValue(LoadingParameter.PARAM_PAGE)) {
+                case LoadingParameter.PARAM_CLASSIC:
+                    this.ClassicPage();
+                    break;
                 default:
-                    this.HomePage_1();
+                    this.HomePage();
                     break;
             }
         }

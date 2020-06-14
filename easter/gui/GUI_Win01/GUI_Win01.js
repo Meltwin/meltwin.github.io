@@ -10,8 +10,10 @@ class GUI_Win01 {
     static INNER_CLASS = "inner";
 
     constructor() {
-        this.div = undefined;
-        this.middleDiv = undefined;
+        //HTMLDivElement.new();
+        this.row = undefined;
+
+        this.createDiv();
     }
     createDiv() {
         if (VersionLoader.DEBUG) console.log("       - Creating GUI_Win01");
@@ -33,7 +35,6 @@ class GUI_Win01 {
             this.inner.classList.add(GUI_Win01.INNER_CLASS);
             this.row.appendChild(this.inner);
         this.row.appendChild(BorderFactory.makeVertBorder());
-
 
         this.div.appendChild(this.row);
     }

@@ -4,6 +4,9 @@ class LoadingParameter {
     static PARAM_PAGE = "page";
     static PARAM_DEBUG = "debug";
 
+    static PARAM_CLASSIC = "classic";
+    static PARAM_ADVANCED = "advanced";
+
 
     constructor() {
         this.key = [];
