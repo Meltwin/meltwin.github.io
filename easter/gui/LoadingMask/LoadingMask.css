@@ -31,7 +31,7 @@ body {
     margin-right: 40px;
     margin-bottom: 30px;
     color:white;
-
+    font-style: italic;
     opacity: 0.8;
 
     display: flex;
@@ -51,11 +51,11 @@ body {
     animation-iteration-count: infinite;
 
     font-size: 20pt;
+    font-style: normal !important;
 
     transform: rotate(0deg);
 
     padding-bottom: 5px;
-    padding-right:1px;
 
     margin-right:5px;
 }

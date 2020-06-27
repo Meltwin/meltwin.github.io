@@ -77,7 +77,7 @@ class VersionLoader {
             }
         }
         else { // Par défaut on affiche le menu
-            this.HomePage_1();
+            this.HomePage();
         }
     }
     /*

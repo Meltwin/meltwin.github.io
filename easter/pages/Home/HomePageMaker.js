@@ -30,14 +30,18 @@ class HomePageMaker extends PageMaker {
         classic.onclick = ()=>{
             LoadingMask.show();
             setTimeout(()=>{
-                document.location.href=`./index.html?=${LoadingParameter.PARAM_PAGE}=${LoadingParameter.PARAM_CLASSIC}`;
+                let s = `./index.html?${LoadingParameter.PARAM_PAGE}=${LoadingParameter.PARAM_CLASSIC}`;
+                if (VersionLoader.DEBUG) s += "&debug";
+                document.location.href=s;
             },LoadingMask.ANIMATION_DURATION);
         };
         advanced.innerHTML = "Avancé";
         advanced.onclick = ()=>{
             LoadingMask.show();
             setTimeout(()=>{
-                document.location.href=`./index.html?=${LoadingParameter.PARAM_PAGE}=${LoadingParameter.PARAM_ADVANCED}`;
+                let s = `./index.html?${LoadingParameter.PARAM_PAGE}=${LoadingParameter.PARAM_ADVANCED}`;
+                if (VersionLoader.DEBUG) s += "&debug";
+                document.location.href=s;
             },LoadingMask.ANIMATION_DURATION);
         };
 
