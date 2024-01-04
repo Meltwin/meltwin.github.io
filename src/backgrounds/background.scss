@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(9, 13, 24);
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+
+    /* Backgrounds */
+    background-image: url("../back_imgs/triangles\ sympa.svg");
+    background-position: center center;
+    background-size: cover;
+    filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 10px 5px #fff3be) drop-shadow(-5px -5px 5px #8583fc);
+}
