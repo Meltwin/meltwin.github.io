@@ -2,6 +2,26 @@ body {
     background-color: rgb(9, 13, 24);
 }
 
+$base-rotation: -20deg;
+$oscillation: 2deg;
+$oscillating-time: 30s;
+
+@keyframes oscillating {
+    0% {
+        transform: rotate($base-rotation+$oscillation);
+    }
+
+    50% {
+        transform: rotate($base-rotation - $oscillation);
+    }
+
+    100% {
+        transform: rotate($base-rotation+$oscillation);
+    }
+}
+
+$mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
+
 .background {
     width: 100%;
     height: 100%;
@@ -12,7 +32,19 @@ body {
 
     /* Backgrounds */
     background-image: url("../back_imgs/triangles\ sympa.svg");
-    background-position: center center;
-    background-size: cover;
+    background-position: 50% 50%;
+    background-size: 85%;
+    background-repeat: no-repeat;
     filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 10px 5px #fff3be) drop-shadow(-5px -5px 5px #8583fc);
+    -webkit-mask-image: radial-gradient(circle at center, 0% white, 100% black);
+    //mask-image: linear-gradient(circle at center, 0% white, 100% transparent);
+    -webkit-mask-image: $mask-gradient;
+    mask-image: $mask-gradient;
+    z-index: 0;
+
+    transform: rotate($base-rotation);
+
+    animation: oscillating $oscillating-time;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
