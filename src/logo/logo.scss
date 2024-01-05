@@ -1,0 +1,46 @@
+$scale-factor: 18;
+$width: min($scale-factor*1vw, $scale-factor*1vh);
+$border-width: 3px;
+
+#logo {
+    // position: absolute;
+    // top: calc(50% - $width/2);
+    // left: calc(50% - $width/2);
+
+    // Display
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    img {
+        width: $width;
+        height: $width;
+
+        // Aspect
+        border-radius: 50%;
+        overflow: hidden;
+        border: $border-width solid white;
+        z-index: 1000;
+    }
+
+    h1,
+    h2 {
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        margin: 0;
+        margin-top: 1em;
+    }
+
+    h1 {
+        font-size: 32pt;
+    }
+
+    h2 {
+        font-size: 18pt;
+        font-style: italic;
+    }
+}
