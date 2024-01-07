@@ -38,9 +38,9 @@ $mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
     background-size: cover;
     background-repeat: no-repeat;
 
-    @include bp.sm {
+    @include bp.ls {
         background-image: url("../back_imgs/triangles\ sympa.svg");
-        background-size: 85%;
+        background-size: cover;
     }
 
 
@@ -51,22 +51,7 @@ $mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
     mask-image: $mask-gradient;
     z-index: 0;
 
-    //transform: rotate($base-rotation);
-
-    //animation: oscillating $oscillating-time;
+    animation: oscillating $oscillating-time;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-
-    // @include bp.sm {
-    //     width: 125%;
-    //     height: 125%;
-    //     top: -12.5%;
-    //     left: -12.5%;
-    // }
-
-    // transform: rotate($base-rotation + 90deg);
-
-    // @include bp.sm {
-    //     transform: rotate($base-rotation);
-    // }
 }

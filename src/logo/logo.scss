@@ -1,12 +1,10 @@
+@use "../common/bp.scss";
+
 $scale-factor: 18;
-$width: min($scale-factor*1vw, $scale-factor*1vh);
+$width: clamp(0vmax, $scale-factor*1vmax, 16vmax);
 $border-width: 3px;
 
 #logo {
-    // position: absolute;
-    // top: calc(50% - $width/2);
-    // left: calc(50% - $width/2);
-
     // Display
     display: flex;
     flex-direction: column;
@@ -36,11 +34,24 @@ $border-width: 3px;
     }
 
     h1 {
-        font-size: 32pt;
+        font-size: 5vmax;
+
+        @include bp.ls {
+            font-size: 2.5vmax;
+        }
     }
 
     h2 {
-        font-size: 18pt;
-        font-style: italic;
+        font-size: 2.5vmax;
+        font-weight: lighter;
+        line-height: 1.6em;
+
+        .italic {
+            font-style: italic;
+        }
+
+        @include bp.ls {
+            font-size: 1.2vmax;
+        }
     }
 }
