@@ -1,7 +1,6 @@
 @use "../common/bp.scss";
 
-$scale-factor: 18;
-$width: clamp(0vmax, $scale-factor*1vmax, 16vmax);
+$width: clamp(12vmax, 13vmax, 75vw);
 $border-width: 3px;
 
 #logo {

@@ -4,7 +4,7 @@ body {
     background-color: rgb(9, 13, 24);
 }
 
-$base-rotation: -20deg;
+$base-rotation: 0deg;
 $oscillation: 2deg;
 $oscillating-time: 30s;
 
@@ -22,7 +22,7 @@ $oscillating-time: 30s;
     }
 }
 
-$mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
+$mask-gradient: radial-gradient(white 0%, white 50%, rgba(0, 0, 0, 0.0) 70%);
 
 .background {
     width: 100%;
@@ -31,6 +31,7 @@ $mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
     top: 0;
     left: 0;
     margin: 0;
+    overflow: hidden;
 
     /* Backgrounds */
     background-image: url("../back_imgs/triangles\ sympa 90.svg");
@@ -40,16 +41,16 @@ $mask-gradient: radial-gradient(white 0%, white 60%, rgba(0, 0, 0, 0.1) 75%);
 
     @include bp.ls {
         background-image: url("../back_imgs/triangles\ sympa.svg");
-        background-size: cover;
+        background-size: 83%;
     }
 
 
-    filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 10px 5px #fff3be) drop-shadow(-5px -5px 5px #8583fc);
+    filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 5px 3px #fff3be) drop-shadow(-5px -5px 3px #8583fc) drop-shadow(6px -5px 1px #97daee);
     -webkit-mask-image: radial-gradient(circle at center, 0% white, 100% black);
     //mask-image: linear-gradient(circle at center, 0% white, 100% transparent);
     -webkit-mask-image: $mask-gradient;
     mask-image: $mask-gradient;
-    z-index: 0;
+    z-index: -1;
 
     animation: oscillating $oscillating-time;
     animation-timing-function: ease-in-out;
