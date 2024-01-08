@@ -45,7 +45,7 @@ $mask-gradient: radial-gradient(white 0%, white 50%, rgba(0, 0, 0, 0.0) 70%);
     }
 
 
-    filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 5px 3px #fff3be) drop-shadow(-5px -5px 3px #8583fc) drop-shadow(6px -5px 1px #97daee);
+    filter: invert(100%) blur(0.6px) opacity(0.5) drop-shadow(5px 10px 5px #fff3be) drop-shadow(-5px -5px 5px #a971f3) drop-shadow(-5px -5px 5px #97daeec0);
     -webkit-mask-image: radial-gradient(circle at center, 0% white, 100% black);
     //mask-image: linear-gradient(circle at center, 0% white, 100% transparent);
     -webkit-mask-image: $mask-gradient;
