@@ -1,6 +1,7 @@
 @use "../common/bp.scss";
+@use "../common/colors.scss" as c;
 
-$width: clamp(12vmax, 13vmax, 75vw);
+$width: clamp(200px, 40vw, 350px);
 $border-width: 3px;
 
 #logo {
@@ -19,13 +20,13 @@ $border-width: 3px;
         // Aspect
         border-radius: 50%;
         overflow: hidden;
-        border: $border-width solid white;
+        border: $border-width solid c.$white-accent;
         z-index: 1000;
     }
 
     h1,
     h2 {
-        color: white;
+        color: c.$white-accent;
         font-family: "Montserrat", sans-serif;
         font-weight: bold;
         margin: 0;
@@ -34,6 +35,7 @@ $border-width: 3px;
 
     h1 {
         font-size: 5vmax;
+        margin-top: 12pt;
 
         @include bp.ls {
             font-size: 2.5vmax;

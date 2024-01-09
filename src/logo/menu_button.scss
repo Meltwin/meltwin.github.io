@@ -1,0 +1,65 @@
+@use "../common/colors.scss" as c;
+
+$button-width: clamp(200px, 65vw, 350px);
+$button-height: 38pt;
+$step: 7%;
+$border-pad: 4px;
+$path: polygon(0% 50%, $step 0%, 100%-$step 0%, 100% 50%, 100%-$step 100%, $step 100%);
+
+.nav-link {
+    text-decoration: none;
+
+    &:hover {
+        cursor: default;
+    }
+
+    &:nth-of-type(2) {
+        margin-top: 2.5vh;
+    }
+}
+
+.menu-button {
+    width: calc($button-width + $border-pad);
+    height: calc($button-height + $border-pad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6pt;
+
+    &:hover {
+        cursor: default;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc($button-width + $border-pad);
+        height: calc($button-height + $border-pad);
+        background-color: c.$white-accent;
+        z-index: -1;
+        clip-path: $path;
+    }
+
+    // Font
+    color: c.$white-accent;
+    vertical-align: middle;
+
+    div {
+        height: $button-height;
+        width: $button-width;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+        clip-path: $path;
+
+        background-color: c.$light-background;
+
+        &:hover {
+            background-color: c.$lighter-background;
+            color: c.$accent-0;
+            cursor: pointer;
+        }
+    }
+}
