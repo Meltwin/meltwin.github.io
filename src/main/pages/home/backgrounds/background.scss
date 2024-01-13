@@ -1,5 +1,5 @@
-@use "../common/bp.scss";
-@use "../common/colors.scss" as c;
+@use "../../../../common/bp.scss";
+@use "../../../../common/colors.scss" as c;
 
 body {
     background-color: c.$background;
@@ -35,13 +35,13 @@ $mask-gradient: radial-gradient(white 0%, white 50%, rgba(0, 0, 0, 0.0) 70%);
     overflow: hidden;
 
     /* Backgrounds */
-    background-image: url("../back_imgs/triangles\ sympa 90.svg");
+    background-image: url("../../../../back_imgs/triangles\ sympa 90.svg");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
 
     @include bp.ls {
-        background-image: url("../back_imgs/triangles\ sympa.svg");
+        background-image: url("../../../../back_imgs/triangles\ sympa.svg");
         background-size: 83%;
     }
 

@@ -1,5 +1,5 @@
-@use "../common/bp.scss";
-@use "../common/colors.scss" as c;
+@use "../../../../common/bp.scss";
+@use "../../../../common/colors.scss" as c;
 
 $width: clamp(200px, 40vw, 350px);
 $border-width: 3px;
@@ -12,6 +12,7 @@ $border-width: 3px;
     align-items: center;
 
     text-align: center;
+    user-select: none;
 
     img {
         width: $width;
@@ -22,6 +23,7 @@ $border-width: 3px;
         overflow: hidden;
         border: $border-width solid c.$white-accent;
         z-index: 1000;
+        user-select: none;
     }
 
     h1,

@@ -1,4 +1,4 @@
-@use "../common/colors.scss" as c;
+@use "../../../../common/colors.scss" as c;
 
 $button-width: clamp(200px, 65vw, 350px);
 $button-height: 38pt;
