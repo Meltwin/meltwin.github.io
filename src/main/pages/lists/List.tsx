@@ -11,7 +11,7 @@ interface ListProps {
 
 export const Lists = React.forwardRef<HTMLDivElement, ListProps>((props, ref) => {
     const loc = useLocation()
-    return (<PageWrapper index="lists" ref={ref} classStyle={loc.pathname.substring(1)}>
+    return (<PageWrapper index="lists" ref={ref} classStyle={loc.pathname.substring(1)} innerPage={true}>
         <Routes>
             <Route path="topics" element={<Topics scrolls={props.scrolls} />} />
             <Route path="lang" element={<Languages scrolls={props.scrolls} />} />

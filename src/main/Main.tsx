@@ -18,7 +18,5 @@ export function Main() {
     return (<HashRouter>
         <Home scrolls={scrollingFunctions} ref={main} />
         <Lists scrolls={scrollingFunctions} ref={lists} />
-
-
     </HashRouter>);
 }
