@@ -1,0 +1,29 @@
+@use "../../../common/colors.scss" as color;
+
+.list {
+    background-color: color.$background-light !important;
+    clip-path: unset;
+    display: flex;
+    flex-direction: column;
+
+    .spacer {
+        flex: 1;
+    }
+
+    .list-header {
+        display: flex;
+        flex-direction: row;
+        width: 97%;
+        border-bottom: 1px solid black;
+
+        .page-name {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    }
+
+    .list-frame {
+        flex: 1;
+    }
+}

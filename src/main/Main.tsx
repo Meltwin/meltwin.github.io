@@ -3,6 +3,7 @@ import "./main.scss"
 import { HashRouter } from "react-router-dom";
 import { Home } from "./pages/home/Home";
 import { Lists } from "./pages/lists/List";
+import { InterPage } from "./pages/wrapper/InterPage";
 
 const scrollFunction = (elem: HTMLDivElement | null) => { elem?.scrollIntoView({ behavior: "smooth" }); }
 
@@ -17,6 +18,7 @@ export function Main() {
 
     return (<HashRouter>
         <Home scrolls={scrollingFunctions} ref={main} />
+        <InterPage />
         <Lists scrolls={scrollingFunctions} ref={lists} />
     </HashRouter>);
 }
