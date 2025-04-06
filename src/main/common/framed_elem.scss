@@ -1,0 +1,115 @@
+@use "./colors.scss" as c;
+
+$button-width: clamp(200px, 65vw, 350px);
+$button-height: 38pt;
+$step: 7%;
+$border-pad: 4px;
+$path: polygon(0% 50%, $step 0%, 100%-$step 0%, 100% 50%, 100%-$step 100%, $step 100%);
+
+.nav-link {
+    text-decoration: none;
+
+    &:hover {
+        cursor: default;
+    }
+}
+
+@function makeShadow($color, $length: 1px, $blur: 0px) {
+    @return drop-shadow($length $length $blur $color) drop-shadow((-$length) $length $blur $color) drop-shadow(-$length (-$length) $blur $color) drop-shadow($length (-$length) $blur $color);
+}
+
+@function makeEdgeClip($tl, $tr, $br, $bl) {
+    @return polygon(0 $tl,
+        $tl 0,
+        calc(100% - $tr) 0,
+        100% $tr,
+        100% calc(100% - $br),
+        calc(100% - $br) 100%,
+        $bl 100%,
+        0 calc(100% - $bl));
+}
+
+.menu-button {
+    width: calc($button-width + $border-pad);
+    height: calc($button-height + $border-pad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6pt;
+
+    &:hover {
+        cursor: default;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc($button-width + $border-pad);
+        height: calc($button-height + $border-pad);
+        background-color: c.$white-accent;
+        z-index: -1;
+        clip-path: $path;
+    }
+
+    // Font
+    vertical-align: middle;
+
+    div {
+        height: $button-height;
+        width: $button-width;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+        clip-path: $path;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin frame($borderColor, $borderWidth, $tl, $tr, $br, $bl) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin: 1px;
+
+    filter: makeShadow($borderColor, $borderWidth);
+
+    >div {
+        padding: 12pt;
+        clip-path: makeEdgeClip($tl, $tr, $br, $bl);
+        width: 100%;
+    }
+
+    &-title {
+        $titleMargin: 0.5em;
+        margin: $titleMargin 0 $titleMargin 0;
+        font-size: 4vh;
+        font-weight: bold;
+    }
+}
+
+.framedA {
+    $fe: 10px;
+    @include frame(c.$accent-0, 1px, 2*$fe, 2*$fe, 2*$fe, 3*$fe);
+
+    div {
+        background-color: c.$white-accent ;
+    }
+
+    &-title {
+        border-bottom: 2px solid c.$accent-0;
+    }
+}
+
+.framedB {
+    $fe: 10px;
+    @include frame(c.$accent-0, 1px, 2*$fe, 2*$fe, 3*$fe, 2*$fe);
+
+    div {
+        background-color: c.$white-accent ;
+    }
+}

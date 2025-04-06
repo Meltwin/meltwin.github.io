@@ -1,2 +1,2 @@
 export type ScrollingFunction = () => void;
-export type ScrollingList = { main: ScrollingFunction, topics: ScrollingFunction }
+export type ScrollingList = { main: ScrollingFunction, about: ScrollingFunction, projects: ScrollingFunction }

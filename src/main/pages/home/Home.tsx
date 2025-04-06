@@ -6,8 +6,9 @@ import { Background } from "./backgrounds/Background";
 
 export const Home = React.forwardRef<HTMLDivElement, { scrolls: ScrollingList }>((props, ref) => {
     return <PageWrapper index="home" ref={ref} classStyle="home">
-
-        <Background />
+        <div id="background-color">
+            <Background />
+        </div>
         {/* Left-top part*/}
         {/* Logo part*/}
         <Logo scrolls={props.scrolls} />

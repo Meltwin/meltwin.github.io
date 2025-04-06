@@ -1,0 +1,134 @@
+@use "../../common/colors.scss" as c;
+
+$about-pad: 5em;
+
+.about {
+    // color: c.$white-accent;
+    padding: $about-pad;
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100vh - 2*$about-pad);
+    width: calc(100vw - 2*$about-pad);
+    background-color: c.$white-accent;
+
+    .about-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        flex: 6;
+
+        .contact {
+            flex: 2;
+            margin-right: 2em;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                #contactName {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 3vh;
+
+                    a {
+                        text-align: center;
+                        text-decoration: none;
+                        $width: 60%;
+                        $grow: 5%;
+
+                        .tooltip-text {
+                            visibility: hidden;
+                            background-color: rgb(53, 53, 53);
+                            color: #fff;
+                            text-align: center;
+                            padding: 5px 0;
+                            border-radius: 6px;
+
+                            display: block;
+                            width: 120px;
+                            top: 5%;
+                            left: 50%;
+                            margin-left: -60px;
+                            opacity: 0;
+
+                            /* Position the tooltip text - see examples below! */
+                            position: relative;
+                            z-index: 1;
+                            transition: opacity 100ms ease-in-out;
+                            text-decoration: none;
+
+                        }
+
+                        img {
+                            width: $width;
+                            margin-top: 0%;
+                            border-radius: 50%;
+                            border: 2px solid c.$white-accent;
+
+                            transition: all ease-in-out 0.2s;
+                        }
+
+                        &:hover {
+                            .tooltip-text {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+
+                            img {
+                                width: $width + $grow;
+                                margin-top: -$grow/2;
+                                margin-bottom: -$grow/2;
+                            }
+                        }
+                    }
+
+                    #pseudo {
+                        font-weight: bold;
+                        font-size: 4vh;
+                        margin: 0pt 0 6pt 0;
+                    }
+
+                    #name {
+                        font-size: 2.5vh;
+                        margin: 0;
+                    }
+
+                    div:nth-child(1) {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex: 2;
+                        margin-right: 1vw;
+                    }
+
+                    div:nth-child(2) {
+                        display: flex;
+                        // justify-content: center;
+                        flex-direction: column;
+                        flex: 3;
+                    }
+                }
+
+            }
+
+            .framedA-title {
+                text-align: center;
+            }
+        }
+
+        .presentation {
+            flex: 5;
+        }
+    }
+
+    .about-bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

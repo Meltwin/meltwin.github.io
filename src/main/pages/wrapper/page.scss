@@ -1,13 +1,9 @@
-@use "../../../common/colors.scss" as color;
+@use "../../common/colors.scss" as color;
 
 $page-steepness: 3%;
 $inner-steepness: 3.5%;
 $end-perc: 1%;
 $inner-shrink: 98%;
-
-@mixin steep-page($steep) {
-    clip-path: polygon(0% $steep, 100% $end-perc, 100% (100%-$steep), 0% (100%-$end-perc));
-}
 
 .page {
     // Size
@@ -21,20 +17,15 @@ $inner-shrink: 98%;
     align-items: center;
 
     // Clip
-    @include steep-page($page-steepness);
-
     .page-inner {
         width: 100%;
         height: $inner-shrink;
-        background-color: color.$background;
 
         // Page format
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
-        @include steep-page($inner-steepness);
     }
 
 }

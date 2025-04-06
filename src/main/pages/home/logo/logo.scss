@@ -1,5 +1,5 @@
-@use "../../../../common/bp.scss";
-@use "../../../../common/colors.scss" as c;
+@use "../../../common/bp.scss";
+@use "../../../common/colors.scss" as c;
 
 $width: clamp(200px, 40vw, 350px);
 $border-width: 3px;
@@ -13,6 +13,7 @@ $border-width: 3px;
 
     text-align: center;
     user-select: none;
+    z-index: 1;
 
     img {
         width: $width;
@@ -29,7 +30,6 @@ $border-width: 3px;
     h1,
     h2 {
         color: c.$white-accent;
-        font-family: "Montserrat", sans-serif;
         font-weight: bold;
         margin: 0;
         margin-top: 1em;
@@ -57,4 +57,24 @@ $border-width: 3px;
             font-size: 1.2vmax;
         }
     }
+
+    .nav-link {
+        &:nth-of-type(2) {
+            margin-top: 2.5vh;
+        }
+
+        .menu-button {
+            color: c.$white-accent;
+            div {
+                background-color: c.$light-background;
+
+                &:hover {
+                    background-color: c.$lighter-background;
+                    color: c.$accent-0;
+                }
+            }
+        }
+    }
+
+
 }
