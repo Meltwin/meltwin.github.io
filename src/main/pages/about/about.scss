@@ -1,131 +1,44 @@
 @use "../../common/colors.scss" as c;
-@use "../../common/framed_elem.scss" as f;
+@use "../../common/bp.scss";
 
-$about-pad: 5em;
+$about-pad-mobile: 1em;
+$about-pad-desktop: 5em;
 
 .about {
     // color: c.$white-accent;
-    padding: $about-pad;
     display: flex;
     flex-direction: column;
 
-    height: calc(100vh - 2*$about-pad);
-    width: calc(100vw - 2*$about-pad);
+    padding: $about-pad-mobile;
+    height: calc(100vh - 2*$about-pad-mobile);
+    width: calc(100vw - 2*$about-pad-mobile);
+
+    @include bp.ls {
+        padding: $about-pad-desktop;
+        height: calc(100vh - 2*$about-pad-desktop);
+        width: calc(100vw - 2*$about-pad-desktop);
+    }
+
     background-color: c.$white-accent;
 
     .about-top {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: stretch;
         flex: 6;
 
+        @include bp.ls {
+            flex-direction: row;
+        }
+
         .contact {
-            @include f.frameA(c.$white-accent-1);
             flex: 2;
-            margin-right: 2em;
+            margin-bottom: 1em;
 
-            >div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-color: c.$white-accent-1;
-                // color: white;
-
-                #contactName {
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 3vh;
-                    margin-bottom: 1vh;
-                    background-color: transparent;
-
-
-                    a {
-                        text-align: center;
-                        text-decoration: none;
-                        $width: 60%;
-                        $grow: 5%;
-
-                        .tooltip-text {
-                            visibility: hidden;
-                            background-color: rgb(53, 53, 53);
-                            color: #fff;
-                            text-align: center;
-                            padding: 5px 0;
-                            border-radius: 6px;
-
-                            display: block;
-                            width: 120px;
-                            height: 40px;
-                            top: 8%;
-                            left: 50%;
-                            margin-left: -60px;
-                            opacity: 0;
-
-                            /* Position the tooltip text - see examples below! */
-                            position: relative;
-                            z-index: 1;
-                            transition: opacity 100ms ease-in-out;
-                            text-decoration: none;
-
-                        }
-
-                        img {
-                            width: $width;
-                            margin-top: 0%;
-                            border-radius: 50%;
-                            border: 2px solid c.$black-accent;
-
-                            transition: all ease-in-out 0.2s;
-                        }
-
-                        &:hover {
-                            .tooltip-text {
-                                visibility: visible;    
-                                opacity: 1;
-                            }
-
-                            img {
-                                width: $width + $grow;
-                                margin-top: -$grow/2;
-                                margin-bottom: -$grow/2;
-                            }
-                        }
-                    }
-
-                    #pseudo {
-                        font-weight: bold;
-                        font-size: 4vh;
-                        margin: 0pt 0 6pt 0;
-                    }
-
-                    #name {
-                        font-size: 2.5vh;
-                        margin: 0;
-                    }
-
-                    div:nth-child(1) {
-                        display: flex;
-                        justify-content: center;
-                        align-items: flex-end;
-                        flex: 1;
-                        // margin-right: 1vw;
-                    }
-
-                    div:nth-child(2) {
-                        display: flex;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-direction: column;
-                        flex: 1;
-                        padding-bottom: 50px;
-                    }
-                }
-
-            }
-
-            .framedA-title {
-                text-align: center;
+            @include bp.ls {
+                flex-direction: row;
+                margin-right: 2em;
             }
         }
 

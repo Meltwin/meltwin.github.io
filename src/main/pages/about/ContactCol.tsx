@@ -1,6 +1,7 @@
 import { faEarth, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { ContactItem } from "./ContactItem"
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import "./contact.scss"
 
 export function ContactCol() {
     return <div className="contact">
@@ -8,7 +9,7 @@ export function ContactCol() {
             <p className={`framedA-title`}>Contact</p>
             <div id="contactName">
                 <div>
-                    <a href="https://github.com/Meltwin" tabIndex={-1} target="_blank"><img src="https://github.com/meltwin.png" alt="Meltwin" />
+                    <a href="https://github.com/Meltwin" tabIndex={-1} target="_blank" rel="noreferrer"><img src="https://github.com/meltwin.png" alt="Meltwin" />
                         <span className="tooltip-text">Visit my Github</span></a>
                 </div>
                 <div>

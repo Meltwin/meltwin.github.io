@@ -14,7 +14,7 @@ const show_title = false;
 export function ContactItem(props: ContactItemsProps) {
     return <div className="contactItem">
         <FontAwesomeIcon icon={props.icon} />
-        <span className="contactItemTitle">{(show_title && props.link_name != undefined) ? `${props.link_name}: ` : ""}</span>
-        <a href={props.href} target="_blank" className="contactLink">{props.title}</a>
+        <span className="contactItemTitle">{(show_title && props.link_name !== undefined) ? `${props.link_name}: ` : ""}</span>
+        <a href={props.href} target="_blank" className="contactLink" rel="noreferrer">{props.title}</a>
     </div>;
 }

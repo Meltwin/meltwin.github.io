@@ -24,6 +24,6 @@ export function Main() {
         <Home scrolls={scrollingFunctions} ref={main} />
         <InterPage />
         <About scrolls={scrollingFunctions} ref={about} />
-        <Lists scrolls={scrollingFunctions} ref={projects} />
+        {/* <Lists scrolls={scrollingFunctions} ref={projects} /> */}
     </HashRouter>);
 }
