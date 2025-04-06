@@ -1,0 +1,27 @@
+@use "../../common/colors.scss" as c;
+
+.contactItem {
+    $font-size: 16pt;
+    $svg-size: 20pt;
+    font-size: $font-size;
+    margin-bottom: 18pt;
+
+    svg {
+        font-size: $svg-size;
+        margin-right: 6pt;
+        margin-bottom: - ($svg-size - $font-size) / 2;
+    }
+
+    .contactItemTitle {
+        font-weight: bolder;
+    }
+
+    .contactLink {
+        color: c.$black-accent;
+        text-decoration: none;
+
+        &:hover {
+            color: c.$link-accent;
+        }
+    }
+}

@@ -6,7 +6,8 @@ I am Geoffrey Côte, a junior robotics developper.
 `.split("\n");
 
 export function PresentationCol() {
-    return <FramedDiv className="presentation" variant="B" title="About Me">
+    return <div className="presentation">
+        <h1 className="sectionTitle">About Me</h1>
         {lipsum.join("\r\n")}
-    </FramedDiv>
+    </div>
 }
