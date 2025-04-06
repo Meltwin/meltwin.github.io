@@ -10,12 +10,14 @@ $about-pad-desktop: 5em;
     flex-direction: column;
 
     padding: $about-pad-mobile;
-    height: calc(100vh - 2*$about-pad-mobile);
+    // height: calc(100vh - 2*$about-pad-mobile);
+    height: fit-content;
     width: calc(100vw - 2*$about-pad-mobile);
 
     @include bp.ls {
         padding: $about-pad-desktop;
-        height: calc(100vh - 2*$about-pad-desktop);
+        // height: calc(100vh - 2*$about-pad-desktop);
+        height: auto;
         width: calc(100vw - 2*$about-pad-desktop);
     }
 

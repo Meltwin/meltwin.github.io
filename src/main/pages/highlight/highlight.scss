@@ -1,0 +1,96 @@
+@use "../../common/colors.scss" as c;
+@use "../../common/framed_elem.scss" as f;
+@use "../../common/bp.scss" as bp;
+
+#highlight {
+    margin-bottom: 5vh;
+    $shadow-drop1: 3px;
+    $shadow-drop: 5px;
+    filter: drop-shadow(0px $shadow-drop 0px c.$white-accent-1) drop-shadow(0px (-$shadow-drop) 0px c.$white-accent-1);
+
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        $path_clip: 15px;
+        background-color: c.$accent-0;
+        clip-path: polygon(0% $path_clip,
+                0% 100%,
+                100% calc(100% - $path_clip),
+                100% 0%);
+        padding-bottom: 2em;
+    }
+
+    .hl_wrapper {
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .hl_slide {
+        @include f.frameA(c.$white-accent-1);
+        height: 300px;
+        margin: 0 1.5%;
+
+        width: 100%;
+
+        @include bp.ls {
+            max-width: 30%;
+        }
+
+        >div {
+            padding: 12pt 0;
+            background-color: c.$white-accent-1;
+        }
+
+    }
+
+
+}
+
+.embla {
+    // overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__viewport {}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.embla__dots {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+
+    .embla__dot {
+        $size: 16px;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        background-color: rgb(245, 245, 245);
+        border: 0;
+        margin-right: 12pt;
+
+        &:hover {
+            background-color: rgb(214, 214, 214);
+            cursor: pointer;
+        }
+
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        &--selected {
+            background-color: c.$background;
+        }
+    }
+}

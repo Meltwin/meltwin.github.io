@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./main.scss"
 import { HashRouter } from "react-router-dom";
-import { Home, Lists, About } from "./pages/Pages"
+import { Home, Highlights, About, Footer } from "./pages/Pages"
 import { InterPage } from "./pages/wrapper/InterPage";
 import { ScrollingList } from "./pages/wrapper/ScrollingFunction";
 
@@ -25,5 +25,7 @@ export function Main() {
         <InterPage />
         <About scrolls={scrollingFunctions} ref={about} />
         {/* <Lists scrolls={scrollingFunctions} ref={projects} /> */}
+        <Highlights />
+        <Footer />
     </HashRouter>);
 }

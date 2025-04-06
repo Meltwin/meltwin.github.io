@@ -12,7 +12,7 @@ These projects range from programming libraries and programs to designing object
 Here an non-exhaustive list of what I usually work on:
 
 <ul>
-    <li><b>Robotics design</b> (<i>C++/Python/C, ROS 1&2, Arduino, Bash</i>)</li>
+    <li><b>Robotics designs</b> (<i>C++/Python/C, ROS 1&2, Arduino, Bash</i>)</li>
     <li><b>General C++ programming</b> (<i>C++, C, CMake, Make</i>)</li>
     <li><b>Python scripting</b> (<i>Python, Numpy, OpenCV</i>)</li>
     <li><b>Websites development</b> (<i>HTML / CSS / PHP / Typescript</i>)</li>
@@ -26,7 +26,7 @@ If you want to take a look at my skill, scroll down!
 
 export function PresentationCol() {
     return <div className="presentation">
-        <h1 className="sectionTitle">About Me</h1>
+        <h1 className="title">About Me</h1>
         {paragraphs.map(par => {
             return (<p dangerouslySetInnerHTML={{ __html: par }}></p>)
         })}

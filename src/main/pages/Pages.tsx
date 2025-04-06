@@ -1,3 +1,4 @@
 export { Home } from "./home/Home"
 export { About } from "./about/About"
-export { Lists } from "./lists/List"
+export { Highlights } from "./highlight/HighLight"
+export { Footer } from "./footer/Footer"

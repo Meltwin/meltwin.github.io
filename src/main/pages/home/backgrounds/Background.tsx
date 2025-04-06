@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { isMobile } from "react-device-detect";
 import "./background.scss"
 
 const EASE_FACTOR = 2; // In percentage
@@ -20,7 +21,13 @@ export function Background() {
     var back = useRef<HTMLDivElement>(null);
     useEffect(
         () => {
-            document.addEventListener("mousemove", (e) => offsetBackgound(back, e), false);
+            if (!isMobile) {
+                console.log("On desktop renderer !");
+                document.addEventListener("mousemove", (e) => offsetBackgound(back, e), false);
+            } else {
+                console.log("On mobile renderer !");
+            }
+
         }, []
     )
     return (<div className="background" ref={back}></div>);
