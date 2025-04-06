@@ -1,4 +1,4 @@
-@use "../../common/colors.scss" as color;
+@use "../../common/colors.scss" as c;
 
 $page-steepness: 3%;
 $inner-steepness: 3.5%;
@@ -34,4 +34,13 @@ $inner-shrink: 98%;
     margin: $titleMargin 0 $titleMargin 0;
     font-size: 4vh;
     font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: c.$accent-1;
+
+    &:hover {
+        color: c.$link-accent;
+    }
 }

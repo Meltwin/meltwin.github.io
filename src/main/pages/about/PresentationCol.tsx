@@ -20,7 +20,7 @@ Here an non-exhaustive list of what I usually work on:
     <li><b>Systems design</b> (<i>OnShape, SolidWorks, KiKad)</i></li>
 </ul>
 
-If you want to take a look at my skill, scroll down!
+If you want to take a look at my projects, scroll down!
 `
 ];
 

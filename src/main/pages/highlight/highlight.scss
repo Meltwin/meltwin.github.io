@@ -15,7 +15,7 @@
         justify-content: flex-start;
         align-items: center;
         width: 100%;
-        $path_clip: 15px;
+        $path_clip: 20px;
         background-color: c.$accent-0;
         clip-path: polygon(0% $path_clip,
                 0% 100%,
@@ -30,19 +30,26 @@
     }
 
     .hl_slide {
-        @include f.frameA(c.$white-accent-1);
-        height: 300px;
+        // @include f.frameA(c.$white-accent);
+        // min-height: 400px;
         margin: 0 1.5%;
+        $shadow-drop: 4px;
+        filter: drop-shadow($shadow-drop $shadow-drop 0px c.$white-accent-1);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: stretch;
 
         width: 100%;
 
         @include bp.ls {
-            max-width: 30%;
+            max-width: 35%;
         }
 
         >div {
+            border-radius: 5px;
+            width: 100%;
             padding: 12pt 0;
-            background-color: c.$white-accent-1;
+            background-color: c.$white-accent;
         }
 
     }
@@ -50,15 +57,114 @@
 
 }
 
-.embla {
-    // overflow: hidden;
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 11pt;
+    padding: 6pt !important;
+
+    &-top {
+        flex: 1;
+    }
+
+    &-bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        >div:nth-child(1) {
+            flex: 1
+        }
+    }
+
+    @include bp.ls {
+        padding-right: 6pt !important;
+    }
+
+    padding-right: 10pt !important;
+
+    text-align: justify;
+
+    p:not(&-name) {
+        margin: 0 0 6pt 0;
+    }
+
+    &-img {
+        margin-left: 10pt;
+        margin-bottom: 6pt;
+        float: right;
+        display: flex;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+
+            @include bp.ls {
+                max-height: 18vh;
+            }
+
+            max-height: 15vh;
+        }
+    }
+
+    &-info {
+        font-size: 14pt;
+        margin: 0;
+        color: c.$lighter-background;
+        text-align: center;
+        margin-top: -10pt;
+        font-style: italic;
+    }
+
+    &-name {
+        text-transform: uppercase;
+        font-size: 2.7vh;
+        margin: 0;
+        font-weight: bolder;
+        text-align: center;
+
+        &::first-letter {
+            font-size: 3vh;
+        }
+    }
+
+    &-tags {
+        &-label {
+            padding: 4pt 0;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+    }
+
+    &-button {
+        display: block;
+        background-color: c.$background;
+        color: c.$white-accent;
+        padding: 4pt;
+        border-radius: 5px;
+
+        &:hover {
+            color: c.$white-accent;
+            background-color: c.$lighter-background;
+        }
+
+        &-red {
+            background-color: c.$red-dark;
+
+            &:hover {
+                background-color: c.$red;
+            }
+        }
+    }
 }
 
 .embla__container {
     display: flex;
 }
-
-.embla__viewport {}
 
 .embla__slide {
     flex: 0 0 100%;
@@ -76,12 +182,12 @@
         width: $size;
         height: $size;
         border-radius: 50%;
-        background-color: rgb(245, 245, 245);
+        background-color: c.$white-accent;
         border: 0;
         margin-right: 12pt;
 
         &:hover {
-            background-color: rgb(214, 214, 214);
+            background-color: c.$white-accent-1;
             cursor: pointer;
         }
 
