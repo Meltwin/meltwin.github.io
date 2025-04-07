@@ -6,7 +6,9 @@ import rosswitch from "./images/rosswitch.png"
 
 export const Fejemis: Project = {
     name: "Fejemis",
-    date: "2025",
+    date: {
+        from: 2025
+    },
     place: "DTU (DK)",
     description: [
         `Fejemis is a modified industrial cleaning cart that should clean autonomously the <a href="https://asta.dtu.dk/">ASTA (Autonomous Systems Test Arena)</a> at DTU.`,
@@ -25,7 +27,10 @@ where the robot should go, when it should go to its base, save what part of the 
 
 export const Arcana: Project = {
     name: "Arcana",
-    date: "2024-2025",
+    date: {
+        from: 2024,
+        to: 2025
+    },
     description: [
         `ROS Arcana is group of several toolkits (C++, CMake, Python, ...) for simplifying ROS2 packages writing.`,
         `I made this project to mainly simplify my own packages, but I hope some day I will be able to make it robust and to publish it`
@@ -39,7 +44,10 @@ export const Arcana: Project = {
 
 export const RosSwitch: Project = {
     name: "ROS Switch",
-    date: "2024-2025",
+    date: {
+        from: 2024,
+        to: 2025
+    },
     description: [
         `Python program to simplify ROS environement definition and switching on Linux.`,
         `After working on several ROS2 projects and having to configure new ROS environment each time, especially when having several projects in parallel, 
@@ -55,7 +63,9 @@ export const RosSwitch: Project = {
 
 export const Baxter: Project = {
     name: "ECN Baxter",
-    date: "2023",
+    date: {
+        from: 2023
+    },
     place: "Centrale Nantes (FR)",
     description: [
         `A ROS2 package providing tools to make ROS2 learning games on the Rethinks Robotics' Baxter robot.`,
@@ -74,7 +84,9 @@ export const Baxter: Project = {
 
 export const ITPRM: Project = {
     name: "Intra-Tubular PRM",
-    date: "2022",
+    date: {
+        from: 2022
+    },
     place: "Centrale Nantes (FR)",
     description: [
         `Matlab path planner for snake-like robot in highly constrained environments.`,

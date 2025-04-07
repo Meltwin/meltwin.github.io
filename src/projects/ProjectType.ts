@@ -4,9 +4,14 @@ export type ProjectLink = {
     color?: string
 }
 
+export type DateContainer = {
+    from: number
+    to?: number
+}
+
 export type Project = {
     name: string
-    date: string
+    date: DateContainer
     place?: string
     description?: string[]
     tags?: string[]

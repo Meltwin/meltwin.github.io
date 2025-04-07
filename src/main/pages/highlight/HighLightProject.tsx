@@ -1,11 +1,25 @@
 import { ReactElement, JSXElementConstructor } from "react";
-import { Project } from "../../../projects/ProjectType";
+import { Project, DateContainer } from "../../../projects/ProjectType";
 import no_img from "../../../projects/no_img.jpg";
 
 type HightLightProjectProps = {
     project?: Project
     children?: ReactElement<any, string | JSXElementConstructor<any>> | string
 };
+
+function formatPrjInfo(prj: Project): string {
+    return formatInfos(prj.date, prj.place);
+}
+
+function formatInfos(date: DateContainer, place?: string): string {
+    let info = "";
+    if (place !== undefined)
+        info = `${place}, `
+    if (date.to !== undefined)
+        info = `${info}${date.to} - `
+    info = `${info}${date.from}`
+    return info;
+}
 
 export function HighLightProject(props: HightLightProjectProps) {
     if (props.project !== undefined)
@@ -17,7 +31,7 @@ export function HighLightProject(props: HightLightProjectProps) {
                     </div>
                     <p className="project-name">{props.project.name}</p>
 
-                    <p className="project-info">{(props.project.place !== undefined) ? props.project.place + ", " : ""}{props.project.date}</p>
+                    <p className="project-info">{formatPrjInfo(props.project)}</p>
 
 
                     {props.project.description?.map(par => { return (<p dangerouslySetInnerHTML={{ __html: par }}></p>) })}

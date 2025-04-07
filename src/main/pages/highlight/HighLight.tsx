@@ -4,7 +4,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import { HighLightProject } from "./HighLightProject"
 import { HighLightDot, useDotButton } from "./HighLightDot"
-import { HighlightedProjects } from "../../../projects/projects"
+import { HighlightedProjects } from "../../../projects/Projects"
 
 export function Highlights() {
     const [emblaRef, emblaAPI] = useEmblaCarousel({ loop: true, align: 'center' }, [Autoplay(), WheelGesturesPlugin()])
